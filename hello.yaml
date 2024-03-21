@@ -1,7 +1,7 @@
 apiVersion: core.spinoperator.dev/v1alpha1
 kind: SpinApp
 metadata:
-  name: spinkube_test
+  name: spinkube-test
 spec:
   image: "ghcr.io/danielzuerrer/spinkube_test:1"
   executor: containerd-shim-spin
