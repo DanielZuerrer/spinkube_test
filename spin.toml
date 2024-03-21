@@ -1,0 +1,18 @@
+spin_manifest_version = 2
+
+[application]
+name = "spinkube_test"
+version = "0.1.0"
+authors = ["Daniel Zürrer <daniel.zuerrer@gmail.com>"]
+description = ""
+
+[[trigger.http]]
+route = "/..."
+component = "spinkube-test"
+
+[component.spinkube-test]
+source = "target/wasm32-wasi/release/spinkube_test.wasm"
+allowed_outbound_hosts = []
+[component.spinkube-test.build]
+command = "cargo build --target wasm32-wasi --release"
+watch = ["src/**/*.rs", "Cargo.toml"]
